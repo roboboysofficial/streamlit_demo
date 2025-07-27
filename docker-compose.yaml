@@ -8,8 +8,8 @@ services:
       STREAMLIT_SERVER_ADDRESS: '0.0.0.0'
       COOLIFY_RESOURCE_UUID: demo123
       COOLIFY_CONTAINER_NAME: streamlit-demo123
-      COOLIFY_URL: 'https://streamlit-demo123.example.com'
-      COOLIFY_FQDN: streamlit-demo123.example.com
+      COOLIFY_URL: 'https://streamlit-demo123.loveforbags.in'
+      COOLIFY_FQDN: streamlit-demo123.loveforbags.in
     volumes:
       - ./app:/app
     working_dir: /app
@@ -24,7 +24,7 @@ services:
       retries: 3
     labels:
       - traefik.enable=true
-      - "traefik.http.routers.streamlit.rule=Host(`streamlit-demo123.example.com`)"
+      - "traefik.http.routers.streamlit.rule=Host(`streamlit-demo123.loveforbags.in`)"
       - "traefik.http.routers.streamlit.entrypoints=websecure"
       - "traefik.http.routers.streamlit.tls.certresolver=letsencrypt"
       - "traefik.http.services.streamlit.loadbalancer.server.port=8501"
