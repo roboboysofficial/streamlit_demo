@@ -3,13 +3,10 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    ports:
-      - "8501"
-    environment:
-      - FQDN=${SERVICE_FQDN_API}
-      - PORT=8501
     container_name: streamlit-demo123
     working_dir: /app
+    ports:
+      - ${PORT}:${PORT}
     healthcheck:
       test: ["CMD-SHELL", "curl -f http://localhost:8501/_stcore/health || exit 1"]
       interval: 30s
